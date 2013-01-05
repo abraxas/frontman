@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Numerous always-ignore extensions
 *.diff
 *.err
@@ -36,3 +37,19 @@ dwsync.xml
 .CVS
 .idea
 node_modules
+=======
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+>>>>>>> eb906511423406988f1fac99d44f04ef8a7c25e5

@@ -1,14 +1,11 @@
-Node Boilerplate
+Frontman
 ================
 
-Generic boilerplate for creating Node.js applications.
+A new type of web framework, or an old type of routing.
 
 
 License
 -------
-Node Boilerplate is licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License][license].
+Pending
 
-Copyright 2012, Roland Warmerdam.
-
-
-[license]: http://creativecommons.org/licenses/by-sa/3.0/
+Copyright 2013, Charles Martin
