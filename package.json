@@ -1,20 +1,14 @@
 {
-    "name": "temp",
-    "description": "",
+    "name": "Frontman",
+    "description": "A new type of web framework, or just another routing idea.",
     "version": "0.1.0",
-    "author": "",
+    "author": "Charles Martin",
     "keywords": [],
     "homepage": "",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/abraxas/frontman.git"
     },
-    "licenses": [
-        {
-            "type": "",
-            "url": ""
-        }
-    ],
     "bugs": {
         "url": ""
     },
@@ -22,6 +16,7 @@
         "node": "~0.8.0"
     },
     "dependencies": {
+      "seaport": "1.2.0"
     },
     "devDependencies": {
         "mocha": "*",
