@@ -17,6 +17,9 @@
     },
     "dependencies": {
       "bouncy": "*",
+      "http-proxy": "*",
+      "request": "*",
+      "async": "*",
       "seaport": "1.2.0"
     },
     "devDependencies": {
