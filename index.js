@@ -2,42 +2,39 @@
 
 exports.version = '0.1.0'
 
-var rp = require('barista').Router
-var r = new rp
+var bouncy = require('bouncy')
+var seaport = require('seaport')
+var seaport_server = seaport.createServer()
+seaport_server.listen(11337)
 
-r.match('/add','GET').to("add.me").name("add")
-r.match('/del','GET').to("del.me").name("del")
+seaport_server.on('register',function(service) {
+//todo - register the incoming seaport connection as a route!
+});
+seaport_server.on('free',function(service) {
+//todo - remove the incoming seaport connection from route!
+});
 
-var has = 0
-
-
+var barista_router_class = require('barista').Router
+var r = new barista_router_class
 
 var http = require('http')
-http.createServer(function (req, res) {
+bouncy(function (req, res, bounce) {
   var b = r.first(req.url)
   var con = b.controller
 
-  switch(con) {
-  case 'add':
-    r.match('/foo','GET').to("foo.me").name("foozz")
-    res.end("Added /foo\n")
-    break
-  case 'del':
-    console
-    r.remove('foozz')
-    res.end("Killed /foo?\n")
-    break
-  case 'foo':
-    res.end("FOUND FOO!\n")
-    break
-  default:
-    res.end("SORRY!\n")
-    break
+  var ps = seaport_server.query(con)
+
+  if (ps.length === 0) {
+    //var res = bounce.respond();
+    res.end('service not available\n');
+  }
+  else {
+    bounce(ps[Math.floor(Math.random() * ps.length)]);
   }
 
 
 
 //  res.writeHead(200, {'Content-Type': 'text/plain'})
 //  res.end('Hello World\n')
-}).listen(1337, '127.0.0.1')
-console.log('Server running at http://127.0.0.1:1337/')
+}).listen(1337)
+console.log('Server running at http://311rh5d01:1337/')
